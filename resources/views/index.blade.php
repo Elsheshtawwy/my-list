@@ -41,13 +41,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($users as $users)
+                    {{-- @foreach($users as $users)
                     <tr>
                         <th scope="row">{{ $index + 1 }}</th>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                     </tr>
-                    @endforeach
+                    @endforeach --}}
                 </tbody>
             </table>
         </div>
