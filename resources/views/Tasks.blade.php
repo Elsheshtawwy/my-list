@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User List</title>
+    <title>task List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
@@ -27,25 +27,31 @@
 
     <div class="mt-4">
         <div class="text-center">
-            <button type="button" class="btn btn-success">Create a new user</button>
-            <button type="button" class="btn btn-primary">Show user info</button>
-            <button type="button" class="btn btn-danger">Delete a user</button>
-            <button type="button" class="btn btn-secondary">Edit a user</button>
+            <button type="button" class="btn btn-success">Create a new task</button>
+            <button type="button" class="btn btn-primary">Show task info</button>
+            <button type="button" class="btn btn-danger">Delete a task</button>
+            <button type="button" class="btn btn-secondary">Edit a task</button>
 
             <table class="table mt-4">
                 <thead>
                     <tr>
                         <th scope="col">Index</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">name</th>
+                        <th scope="col">description</th>
+                        <th scope="col">is_done</th>
+                        <th scope="col">before-date</th>
+                        <th scope="col">priority</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($users as $user)
+                    @foreach($tasks as $task)
                     <tr>
                         <th scope="row">{{ $loop->iteration }}</th>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
+                        <td>{{ $task->name }}</td>
+                        <td>{{ $task->description }}</td>
+                        <td>{{ $task->is_done }}</td>
+                        <td>{{ $task->before }}</td>
+                        <td>{{ $task->priority }}</td>
                     </tr>
                     @endforeach
                 </tbody>

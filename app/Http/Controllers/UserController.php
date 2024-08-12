@@ -17,12 +17,14 @@ class UserController extends Controller
         ]);
     }
 
+    
+
     // public function index() {
     //     // Collect all users
     //     $users = User::all();
     //     // Return view with users data
-    //     return view('users.index', ['users' => $users]);
-    // }
+    //     return view('index', ['users' => $users]);
+    //     }
     
 
     
