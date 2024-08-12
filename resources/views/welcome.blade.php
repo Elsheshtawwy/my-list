@@ -11,14 +11,14 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">My to do list</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">All posts</a>
+                        
                     </li>
                 </ul>
             </div>
@@ -27,32 +27,31 @@
 
     <div class="mt-4">
         <div class="text-center">
-            <button type="button" class="btn btn-success">Create Post</button>
+            <button type="button" class="btn btn-success">Create a task</button>
 
             <table class="table mt-4">
                 <thead>
                     <tr>
                         <th scope="col">Index</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Posted by</th>
-                        <th scope="col">Created at</th>
+                        <th scope="col">Started by</th>
+                        <th scope="col">deadline</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($posts as $post)
+                   
                     <tr>
-                        <th scope="row">{{$post["id"]}}</th>
-                        <td>{{$post["title"]}}</td>
-                        <td>{{$post["Posted by"]}}</td>
-                        <td>{{$post["Created at"]}}</td>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <button type="button" class="btn btn-primary">View</button>
-                            <button type="button" class="btn btn-danger">Edit</button>
-                            <button type="button" class="btn btn-secondary">Delete</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                            <button type="button" class="btn btn-secondary">Edit</button>
                         </td>
                     </tr>      
-                    @endforeach
                 </tbody>
             </table>
         </div>

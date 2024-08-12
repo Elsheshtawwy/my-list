@@ -34,46 +34,19 @@ class UserController extends Controller
     public function show($id){
         // Find the user by id
         $user = User::find($id);
-        if ($user == null) {
-            return response()->json([
-                "message" => "User not found"
-            ], 404);
-        }
         return response()->json([
             'data' => $user
-        ]);
-    }
-
-    public function search(Request $request) {
-        // Get the search query from the request
-        $query = $request->input('query');
-        // Find users by name or email containing the search query
-        $users = User::where('name', 'LIKE', "%{$query}%")
-            ->orWhere('email', 'LIKE', "%{$query}%")
-            ->get();
-        // Return the users found
-        return response()->json([
-            "users" => $users
         ]);
     }
     
     public function destroy($id) {
         // Find the user by id
-        $user = User::find($id);
-    
-        // Check if the user exists
-        if (!$user) {
-            return response()->json([
-                "message" => "User not found"
-            ], 404);
-        }
-    
+        $user = User::findOrFail($id);
         // Delete the user
         $user->delete();
-    
         // Return success message
         return response()->json([
-            "message" => "User deleted successfully"
+            "message" => "User deleted successfully ;)"
         ]);
     }
 
@@ -89,7 +62,7 @@ class UserController extends Controller
         $user->update($input);
         // Return success message
         return response()->json([
-            "message" => "User updated successfully",
+            "message" => "User updated successfully ;)",
             "user" => $user
         ]);
     }
