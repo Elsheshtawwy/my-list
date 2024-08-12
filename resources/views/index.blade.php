@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>User List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
@@ -18,7 +18,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        
+                        <!-- Add navigation items here if needed -->
                     </li>
                 </ul>
             </div>
@@ -27,31 +27,27 @@
 
     <div class="mt-4">
         <div class="text-center">
-            <button type="button" class="btn btn-success">Create a task</button>
+            <button type="button" class="btn btn-success">Create a new user</button>
+            <button type="button" class="btn btn-primary">Show user info</button>
+            <button type="button" class="btn btn-danger">Delete a user</button>
+            <button type="button" class="btn btn-secondary">Edit a user</button>
 
             <table class="table mt-4">
                 <thead>
                     <tr>
                         <th scope="col">Index</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Started by</th>
-                        <th scope="col">deadline</th>
-                        <th scope="col">Actions</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
                     </tr>
                 </thead>
                 <tbody>
-                   
+                    @foreach($users as $users)
                     <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <button type="button" class="btn btn-primary">View</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
-                            <button type="button" class="btn btn-secondary">Edit</button>
-                        </td>
-                    </tr>      
+                        <th scope="row">{{ $index + 1 }}</th>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
